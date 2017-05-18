@@ -13,6 +13,11 @@ import collections
 import math
 import time
 
+os.path.exists = tf.gfile.Exists
+glob.glob = tf.gfile.Glob
+os.makedirs = tf.gfile.MakeDirs
+open = tf.gfile.Open
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--input_dir", help="path to folder containing images")
 parser.add_argument("--mode", required=True, choices=["train", "test", "export"])
